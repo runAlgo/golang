@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 // Practice Question 1: Basic (Filtering Data)
 
@@ -25,9 +25,9 @@ func FilterHighValueTransactions(transactions []float64, threshold float64) []fl
 }
 
 
-func main() {
-	var transactions = []float64{10.50, 99.99, 500.00, 25.00, 1000.00} 
-	threshold := 100.00
-	highValue := FilterHighValueTransactions(transactions, threshold)
-	fmt.Println(highValue)
-}
+// func main() {
+// 	var transactions = []float64{10.50, 99.99, 500.00, 25.00, 1000.00} 
+// 	threshold := 100.00
+// 	highValue := FilterHighValueTransactions(transactions, threshold)
+// 	fmt.Println(highValue)
+// }
