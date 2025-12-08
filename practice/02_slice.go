@@ -29,14 +29,14 @@ func RemoveTaskAtIndex(tasks []string, index int) []string {
 	return tasks[:len(tasks)-1]
 }
 
-func main() {
-	tasks := []string{"A", "B", "C", "D", "E"}
-	indexToRemove := 2 // Index of "C"
+// func main() {
+// 	tasks := []string{"A", "B", "C", "D", "E"}
+// 	indexToRemove := 2 // Index of "C"
 
-	fmt.Println("Before Removel:", tasks) // Output: [A B C D E]
+// 	fmt.Println("Before Removel:", tasks) // Output: [A B C D E]
 
-	tasks = RemoveTaskAtIndex(tasks, indexToRemove)
+// 	tasks = RemoveTaskAtIndex(tasks, indexToRemove)
 
-	fmt.Println("After Removal:", tasks) // Output: [A B D E]
+// 	fmt.Println("After Removal:", tasks) // Output: [A B D E]
 
-}
+// }

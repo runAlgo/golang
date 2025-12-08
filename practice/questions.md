@@ -50,3 +50,26 @@ Write a Go function named ```RemoveTaskAtIndex``` that accepts:
 Input: tasks = ["A", "B", "C", "D", "E"]
 index = 2 (Remove "C")
 Output: ["A", "B", "D", "E"]
+
+## 3 Advanced (Underlying Array and Sub-Slicing)
+
+## Scenario
+You are implementing a component that manages a large, pre-allocated buffer (an underlying array) to store the log entries. Your component exposes several smaller "views" (slices) of this buffer to different processing units. You need to understand how modifications in one slice affect others due to the shared underlying array.
+
+## Task
+Write a Go function named ```SharedBufferTest``` that demonstrates the relationship between slices and their underlying array:
+
+1. Create an initial slice of integers, ```buffer```, with a length and capacity of 5, initialized with values [1, 2, 3, 4, 5]
+2. Create a new slice, ```viewA```, by taking a sub-slice of ```buffer``` from index 1(inclusive) to index 4(exclusive).
+3. Modify the first element of ```viewA``` to ```99```.
+4. Create a third slice, ```viewB```, by appending a new element (```100```) to the original ```buffer```.
+
+The function should print the final state of all three slices (buffer, viewA, viewB) and explain why ```viewA```s modification affected ```buffer```.
+
+## Constraints
+
+* Use the ```make``` function to initialize the starting ```buffer``` slice.
+* Print the slices in the order they are created/modified.
+
+## Expected Result Explanation Focus
+You should be able to explain that the modification in step 3 affects the original ```buffer``` because ```viewA``` and ```buffer``` are over the same underlying array data. The append operation in step 4 will likely create a new underlying array for ```viewB``` if the original capacity is exceeded, demonstrating when the sharing stops.
