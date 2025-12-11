@@ -5,12 +5,19 @@ import (
 	"time"
 )
 
+type customer struct {
+	name  string
+	phone string
+}
+
 // We don't have class on Go programming thats, we have struct
+// composition
 type order struct {
-	id string
-	amount float32
-	status string
+	id        string
+	amount    float32
+	status    string
 	createdAt time.Time // nanosecond precision
+	customer
 }
 
 // func newOrder(id string, amount float32, status string) *order {
@@ -32,22 +39,32 @@ type order struct {
 // 	o.amount = price
 // }
 
-
 // func (o order) getPrice() float32 {
 // 	return o.amount
 // }
 
-
-
-
 func main() {
 
-	language := struct {
-		name string
-		isGood bool
-	}{"golang", true}
+	newOrder := order{
+		id:     "1",
+		amount: 30.33,
+		status: "pending",
+		customer: customer{
+			name:  "john",
+			phone: "1234567890",
+		},
+	}
 
-	fmt.Println(language)
+	newOrder.customer.name = "bablu"
+
+	fmt.Println(newOrder)
+
+	// language := struct {
+	// 	name string
+	// 	isGood bool
+	// }{"golang", true}
+
+	// fmt.Println(language)
 
 	// myOrder := newOrder("1", 30.55, "received")
 	// fmt.Println(myOrder.amount)
@@ -72,7 +89,6 @@ func main() {
 	// }
 
 	// myOrder.status = "paid"
-
 
 	// myOrder.createdAt = time.Now()
 	// fmt.Println("Order Struct:", myOrder)
