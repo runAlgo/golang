@@ -44,6 +44,6 @@ func SharedBufferTest() {
 	fmt.Printf("ViewB: %v (Len: %d, Cap: %d)\n", viewB, len(viewB), cap(viewB)) // Output: [1, 99, 77, 4, 5, 100] - UNMODIFIED by viewA[1]=77 because it has a new underlying array.
 }
 
-func main() {
-	SharedBufferTest()
-}
+// func main() {
+// 	SharedBufferTest()
+// }
