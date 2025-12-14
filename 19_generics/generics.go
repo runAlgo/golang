@@ -3,6 +3,13 @@ package main
 import (
 	"fmt"
 )
+//Go generics let you write one pice of code that works for many types,
+// without repeating yourself or losing type safety. They're most useful
+// when the logic is the same but the types differ.
+
+
+
+
 func printSlice[T comparable, V string](items []T, name V) {
 	fmt.Println(name)
 	for _, item := range items {
