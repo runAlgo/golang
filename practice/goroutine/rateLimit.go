@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+// Rate-Limited API Worker Pool
+
+type Job struct {
+	ID int
+}
 // 1. Rate-Limited API Worker Pool
 // Problem :
 // I'm building a  backend service that processes 10,000 API requests, but:
@@ -20,10 +25,6 @@ import (
 // * Worker pool (bounded concurrency)
 // * Ticker for rate limiting
 // * Buffered channel for job queue
-
-type Job struct {
-	ID int
-}
 
 func worker(id int, jobs <-chan Job, limiter <-chan time.Time, wg *sync.WaitGroup) {
 	defer wg.Done()
@@ -42,11 +43,7 @@ func main() {
 
 	for i := 1; i <= 20; i++ {
 		wg.Add(1)
-<<<<<<< HEAD
-		go worker(i, jobs, limiter, &wg) // *** Worker Goroutine ****
-=======
 		go worker(i, jobs, limiter, &wg)
->>>>>>> 0aa80e0c51ca50878b289b8e9e3b38f3524a3654
 	}
 
 	for i := 1; i <= 100; i++ {
