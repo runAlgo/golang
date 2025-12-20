@@ -42,7 +42,11 @@ func main() {
 
 	for i := 1; i <= 20; i++ {
 		wg.Add(1)
+<<<<<<< HEAD
 		go worker(i, jobs, limiter, &wg) // *** Worker Goroutine ****
+=======
+		go worker(i, jobs, limiter, &wg)
+>>>>>>> 0aa80e0c51ca50878b289b8e9e3b38f3524a3654
 	}
 
 	for i := 1; i <= 100; i++ {
