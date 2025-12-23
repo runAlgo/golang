@@ -26,7 +26,7 @@ package main
 // 		return
 // 	}
 
-// 	writer.Flush()// Ensure all buffered data is written
+// 	writer.Flush() // Ensure all buffered data is written
 // 	fmt.Println("Buffered write complete")
 
 // }
