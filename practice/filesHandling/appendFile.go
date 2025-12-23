@@ -27,10 +27,10 @@ package main
 // 	}
 // 	defer f.Close()
 
-// 	n, e := f.WriteString("\nMe Appended data")
+// 	_, e := f.WriteString("\nMe Appended data")
 // 	if e != nil {
 // 		panic(e)
 // 	}
-// 	fmt.Print(n)
+// 	fmt.Println("Appended successfully")
 
 // }
