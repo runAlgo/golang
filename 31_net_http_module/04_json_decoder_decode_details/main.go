@@ -8,6 +8,11 @@ import (
 	"strings"
 	"time"
 )
+// Implementing a basic HTTP server with a JSON-based REST API endpoint, 
+// and it demonstrates the core concept of handling HTTP requests, decoding
+// JSON from the requestt body into a GO struct, validating the input, and
+// sending a JSON response back to the client. This is one of the foundational
+// building blocks for creating APIs and web services in Go.
 
 func writeJSON(w http.ResponseWriter, status int, data any) {
 	w.Header().Set("Content-Type", "application/json")
